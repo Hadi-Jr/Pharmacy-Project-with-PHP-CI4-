@@ -1,5 +1,8 @@
 <?php
 return [
     'welcome' => 'Willkommen',
-    'login'
+    'login',
+    'promotions' => 'Promotionen',
+    'new_products' => 'Neue Produkte',
+    'categories' => 'Kategorien'
 ];

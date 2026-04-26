@@ -391,7 +391,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before 
 }
 
 .main-header {
-    background: #282e3f;
+    background: #00acba;
     left: 0;
     position: fixed;
     right: 0;
@@ -400,12 +400,11 @@ table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before 
 }
 
 .main-header .seipkon-logo {
-    background: #282e3f;
     float: left;
-    height: 70px;
+    height: auto;
     position: relative;
     text-align: center;
-    width: 235px;
+    width: 255px;
     z-index: 1;
 }
 
@@ -416,39 +415,23 @@ table#invoice-list a {
 }
 
 .seipkon-logo img {
-    margin: 12px 0;
-    width: 190px;
+    margin-top: 17px;
+    margin-left: 50px;
 }
 
 .main-header .navbar.navbar-default {
-    background: #282e3f;
+    background: #fdfdfd;
     border: none;
     border-radius: 0;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.35);
     margin: 0;
 }
 
-#sidebarCollapse {
-    background: 0 0 !important;
-    color: #878787 !important;
-    margin: 16px 10px !important;
-    padding: 3px 10px;
-    border-radius: 0 !important;
-    border: 2px solid #878787 !important;
-    font-size: 17px;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
-}
-
-#sidebarCollapse:hover {
-    color: #fff !important;
-    border: 2px solid #fff !important;
-}
-
 .header-top-search {
     display: inline-block;
     vertical-align: middle;
-    margin-left: 20px;
+    margin-left: 25px;
+    margin-bottom: 2px;
 }
 
 .header-top-search form {
@@ -459,7 +442,7 @@ table#invoice-list a {
 }
 
 .header-top-search form input {
-    border: 1px solid #fff;
+    border: 1px solid #878787;
     border-radius: 20px;
     height: 100%;
     left: 0;
@@ -468,6 +451,21 @@ table#invoice-list a {
     width: 100%;
     color: #212121;
 }
+#sidebarCollapse {
+    background: 0 0 !important;
+    color: #878787 !important;
+    margin: 16px 10px 0 60px !important;
+    padding: 5px 15px 5px 10px;
+    border-radius: 20px !important;
+    border: 1px solid #878787 !important;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+/*#sidebarCollapse:hover {*/
+/*    color: #fff !important;*/
+/*    border: 2px solid #fff !important;*/
+/*}*/
 
 .chat-search-form form button,
 .header-top-search form button {
@@ -2309,8 +2307,8 @@ ul.work_history>li>p {
 .btn-bordered-success,
 .label-bordered-success,
 .seipkon-btn-bordered-success {
-    border: 1px solid #ee8042;
-    color: #ee8042;
+    border: 1px solid #14beb5;
+    color: #14beb5;
     background: 0 0;
 }
 
@@ -4900,7 +4898,7 @@ ul.work_history>li>p>span {
 .lockscreen-seipkon-logo img,
 .login-page-logo img,
 .toggle {
-    width: 200px;
+    width: 55px;
 }
 
 .gallery_item a .caption-hover {

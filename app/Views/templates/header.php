@@ -10,12 +10,11 @@
 <div class="wrapper">
     <!-- Main Header Start -->
     <header class="main-header">
-
         <!-- Logo Start -->
-        <div class="">
+        <div class="seipkon-logo">
             <a href="<?= base_url('/') ?>">
-                <img width="100px" style="margin: 0 auto;float: left; position: relative; z-index: 1; margin: 5px 0 0 15px;" class="img-responsive"
-                     src="<?= base_url('assets/img/logo.png') ?>" alt="logo">
+                <img class="img-responsive"
+                     src="assets/img/8796168978462.svg" alt="logo">
             </a>
         </div>
         <!-- Logo End -->
@@ -24,36 +23,43 @@
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="header-top-section">
-                    <div class="pull-left">
 
+                    <div class="pull-left">
                         <!-- Collapse Menu Btn Start -->
                         <button type="button" id="sidebarCollapse" class=" navbar-btn">
-                            <i class="fa fa-bars"></i>
+                            <i class="fa-solid fa-layer-group"></i>
+                            <?= lang('App.categories') ?>
                         </button>
-                        <!-- Collapse Menu Btn End -->
 
+                        <a style="color: #f83a3a; cursor:pointer; margin-left: 50px; margin-right: 20px;">
+                            <i class="fa-solid fa-tag"></i>
+                            <?= lang('App.promotions') ?>
+                        </a>
+                        <a style="color: #3d3b3b; cursor:pointer; margin-right: 20px;">
+                            <?= lang('App.new_products') ?>
+                        </a>
+                        <div class="header-top-search" bis_skin_checked="1">
+                            <form>
+                                <input type="search" placeholder="Search...">
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                            </form>
+                        </div>
                     </div>
                     <div class="header-top-right-section pull-right">
-                        <ul class="nav nav-pills nav-top navbar-right">
-                            <!-- Profile Toggle Start -->
-                            <li class="dropdown">
-                                <div class="profile-box dropdown-menu animated bounceIn">
-                                    <ul>
-                                        <li>
-                                            <a href="<?= base_url('/profile/view') ?>">
-                                                <i class="fa fa-user"></i> <?= lang('App.login') ?>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <!-- Profile Toggle End -->
-                        </ul>
+                        <div style="margin-top: 8px; padding: 14px;">
+                            <a style="cursor: pointer; font-size: 22px; margin-right: 10px;">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </a>
+                            <a style="cursor: pointer; font-size: 22px;">
+                                <i class="fa-solid fa-user"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </nav>
         <!-- Header Top End -->
-
     </header>
     <!-- Main Header End -->
+
+    <?= view('sidebar/sidebar') ?>

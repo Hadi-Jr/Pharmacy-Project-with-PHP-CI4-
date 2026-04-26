@@ -26,6 +26,12 @@ Should be included in all HTML pages.
 
 		$("#sidebar").perfectScrollbar();
 
+		$(document).ready(function() {
+			$('#sidebar, #content').addClass('active');
+			$('.collapse.open').removeClass('open');
+			$('a[aria-expanded=true]').attr('aria-expanded', 'false');
+		});
+
 		$('#sidebarCollapse').on('click', function () {
 			$('#sidebar, #content').toggleClass('active');
 			$('.collapse.open').toggleClass('open');

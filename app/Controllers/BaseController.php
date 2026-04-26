@@ -39,11 +39,15 @@ class BaseController extends Controller
             $this->request->setLocale($locale);
         }
 
-        $this->settings = $this->db
-            ->table('sys_system')
-            ->select('key', 'value')
+        $this->settings = $db
+            ->table('sys_settings')
+            ->select('key, value')
             ->orderBy('id', 'ASC')
             ->get()
             ->getResultArray();
+
+        $this->data = [
+            'settings' => $this->settings
+        ];
     }
 }
