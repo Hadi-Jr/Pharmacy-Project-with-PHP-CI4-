@@ -38,7 +38,7 @@
                         <a style="color: #3d3b3b; cursor:pointer; margin-right: 20px;">
                             <?= lang('App.new_products') ?>
                         </a>
-                        <div class="header-top-search" bis_skin_checked="1">
+                        <div class="header-top-search">
                             <form>
                                 <input type="search" placeholder="Search...">
                                 <button type="submit"><i class="fa fa-search"></i></button>
@@ -46,13 +46,27 @@
                         </div>
                     </div>
                     <div class="header-top-right-section pull-right">
-                        <div style="margin-top: 8px; padding: 14px;">
+                        <div class="header-set">
                             <a style="cursor: pointer; font-size: 22px; margin-right: 10px;">
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </a>
                             <a style="cursor: pointer; font-size: 22px;">
                                 <i class="fa-solid fa-user"></i>
                             </a>
+
+                            <form class="lang-dropdown-form">
+                                <select name="language" class="lang-select">
+                                    <option value="en" <?= session()->get('locale') === 'en' ? 'selected' : '' ?>>
+                                        English
+                                    </option>
+                                    <option value="de" <?= session()->get('locale') === 'de' ? 'selected' : '' ?>>
+                                        Deutsch
+                                    </option>
+                                    <option value="bg" <?= session()->get('locale') === 'bg' ? 'selected' : '' ?>>
+                                        Български
+                                    </option>
+                                </select>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -61,5 +75,24 @@
         <!-- Header Top End -->
     </header>
     <!-- Main Header End -->
+
+    <script>
+        $(document).ready(function() {
+            $('select[name="language"]').on('change', function () {
+                var locale = $(this).val();
+
+                $.ajax({
+                    url: '<?= base_url('language/switch') ?>',
+                    type: 'post',
+                    data: {
+                        'locale': locale
+                    },
+                    success: function() {
+                        location.reload();
+                    },
+                });
+            });
+        });
+    </script>
 
     <?= view('sidebar/sidebar') ?>

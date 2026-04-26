@@ -15,14 +15,14 @@
                                 </div>
                             </div>
                             <div class="item">
-                                <img src="assets/img/carousel/Carousel_1.jpg" alt="Bootstrap Carousel">
+                                <img src="assets/img/c1.jpg" alt="Bootstrap Carousel">
                                 <div class="carousel-caption">
                                     <h3>Second slide label</h3>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 </div>
                             </div>
                             <div class="item">
-                                <img src="assets/img/carousel/Carousel_4.jpg" alt="Bootstrap Carousel">
+                                <img src="assets/img/c2.jpg" alt="Bootstrap Carousel">
                                 <div class="carousel-caption">
                                     <h3>Third slide label</h3>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
