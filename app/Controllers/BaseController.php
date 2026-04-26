@@ -22,9 +22,10 @@ use Psr\Log\LoggerInterface;
  */
 class BaseController extends Controller
 {
-    protected $helpers = ['form', 'url', 'array'];
+    protected $helpers = ['form', 'url', 'array', 'base', 'seo'];
     protected $session;
     protected $data;
+    protected $settings;
 
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
     {
@@ -37,5 +38,12 @@ class BaseController extends Controller
         if ($locale) {
             $this->request->setLocale($locale);
         }
+
+        $this->settings = $this->db
+            ->table('sys_system')
+            ->select('key', 'value')
+            ->orderBy('id', 'ASC')
+            ->get()
+            ->getResultArray();
     }
 }

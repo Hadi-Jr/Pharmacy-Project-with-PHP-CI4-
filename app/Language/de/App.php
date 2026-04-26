@@ -1,4 +1,5 @@
 <?php
 return [
-    'welcome' => 'Willkommen'
+    'welcome' => 'Willkommen',
+    'login'
 ];
