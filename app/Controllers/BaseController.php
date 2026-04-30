@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\CategoriesModel;
 use CodeIgniter\Controller;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
@@ -26,6 +27,7 @@ class BaseController extends Controller
     protected $session;
     protected $data;
     protected $settings;
+    protected $categories;
 
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
     {
@@ -34,9 +36,13 @@ class BaseController extends Controller
         $db = Database::connect();
         $this->session = Services::session();
 
+        $this->categoriesModel = new CategoriesModel($db);
+
         $locale = $this->session->get('locale');
         if ($locale) {
             $this->request->setLocale($locale);
+        } else {
+            $this->session->set('locale', config('app')->defaultLocale);
         }
 
         $this->settings = $db
@@ -46,8 +52,35 @@ class BaseController extends Controller
             ->get()
             ->getResultArray();
 
+        $categories = $this->categoriesModel
+            ->get_all_categories();
+
+        $categoryTree = $this->buildCategoryTree($categories);
+
         $this->data = [
-            'settings' => $this->settings
+            'settings' => $this->settings,
+            'categories' => $categoryTree
         ];
+    }
+
+    public function buildCategoryTree($categories, $parent_id = null)
+    {
+        $categoryTree = [];
+
+        foreach ($categories as $category) {
+            if ($category->parent_id == $parent_id) {
+
+                $children = $this->buildCategoryTree($categories, $category->id);
+
+                if ($children) {
+                    $category->children = $children;
+                } else {
+                    $category->children = [];
+                }
+
+                $categoryTree[] = $category;
+            }
+        }
+        return $categoryTree;
     }
 }

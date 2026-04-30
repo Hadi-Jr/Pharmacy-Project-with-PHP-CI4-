@@ -1,7 +1,7 @@
 <?php
 return [
     'welcome' => 'Willkommen',
-    'login',
+    'login' => 'Login',
     'promotions' => 'Promotionen',
     'new_products' => 'Neue Produkte',
     'categories' => 'Kategorien'

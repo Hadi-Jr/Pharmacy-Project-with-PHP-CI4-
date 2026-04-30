@@ -15,18 +15,4 @@ class Categories extends BaseController
         $this->db = Database::connect();
         $this->categoriesModel = new CategoriesModel($this->db);
     }
-
-    public function index()
-    {
-        $this->data += [
-            'seo_data' => []
-        ];
-
-        $categories = $this->categoriesModel
-            ->get_all_categories();
-
-        foreach ($categories as $key => $category) {
-
-        }
-    }
 }
