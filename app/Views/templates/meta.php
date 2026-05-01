@@ -39,7 +39,7 @@
 
     <!-- jQuery UI CSS -->
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="assets/css/my.css">
+    <link rel="stylesheet" href="<?= base_url('assets/css/my.css') ?>">
 </head>
 <body class="body_white_bg">
 

@@ -404,7 +404,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before 
     height: auto;
     position: relative;
     text-align: center;
-    width: 255px;
+    width: 120px;
     z-index: 1;
 }
 

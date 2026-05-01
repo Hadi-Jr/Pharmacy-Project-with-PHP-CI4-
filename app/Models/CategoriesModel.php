@@ -20,4 +20,13 @@ class CategoriesModel
             ->get()
             ->getResult();
     }
+
+    public function get_category_by_slug($category_slug)
+    {
+        return $this->db
+            ->table('categories')
+            ->where('slug', $category_slug)
+            ->get()
+            ->getRow();
+    }
 }

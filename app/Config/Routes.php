@@ -7,11 +7,14 @@ use CodeIgniter\Router\RouteCollection;
  */
 
 //Home
-$routes->get('/home', 'Home::index');
+$routes->get('home', 'Home::index');
 $routes->get('/', 'Home::index');
 
 
 //Language
 $routes->post('language/switch', 'Language::switch');
+
+//Categories
+$routes->get('category/(:any)', 'Categories::view/$1');
 
 

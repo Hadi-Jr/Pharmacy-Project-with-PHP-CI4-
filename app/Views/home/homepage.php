@@ -8,21 +8,21 @@
                         <div class="carousel-inner" role="listbox">
                             <!-- 1334x500-->
                             <div class="item active">
-                                <img src="assets/img/9310060576798.jpg" alt="Bootstrap Carousel">
+                                <img src="assets/img/carousel/carousel1.jpg" alt="Bootstrap Carousel">
                                 <div class="carousel-caption">
                                     <h3>First slide label</h3>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 </div>
                             </div>
                             <div class="item">
-                                <img src="assets/img/c1.jpg" alt="Bootstrap Carousel">
+                                <img src="assets/img/carousel/carousel2.jpg" alt="Bootstrap Carousel">
                                 <div class="carousel-caption">
                                     <h3>Second slide label</h3>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 </div>
                             </div>
                             <div class="item">
-                                <img src="assets/img/c2.jpg" alt="Bootstrap Carousel">
+                                <img src="assets/img/carousel/carousel3.jpg" alt="Bootstrap Carousel">
                                 <div class="carousel-caption">
                                     <h3>Third slide label</h3>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>

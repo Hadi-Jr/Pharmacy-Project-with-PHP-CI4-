@@ -1,14 +1,14 @@
 <?php
     function renderCategories($categories)
     {
-        $localeCatName = session()->get('locale'). '_' . 'name';
+        $localeCatSuffix = session()->get('locale'). '_' . 'name';
 
         foreach ($categories as $category) {
             if (!empty($category->children)) {
                 ?>
                     <li>
                         <a href="#cat<?= $category->id ?>" data-toggle="collapse" aria-expanded="false">
-                            <?= $category->$localeCatName ?>
+                            <?= $category->$localeCatSuffix ?>
                         </a>
 
                         <ul class="collapse list-unstyled" id="cat<?= $category->id ?>">
@@ -19,8 +19,8 @@
             } else {
                 ?>
                     <li>
-                        <a href="<?= base_url($category->url) ?>">
-                            <?= $category->$localeCatName ?>
+                        <a href="<?= base_url('category/' . $category->slug) ?>">
+                            <?= $category->$localeCatSuffix ?>
                         </a>
                     </li>
         <?php

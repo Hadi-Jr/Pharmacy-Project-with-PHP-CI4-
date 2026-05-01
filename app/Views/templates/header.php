@@ -14,7 +14,7 @@
         <div class="seipkon-logo">
             <a href="<?= base_url('/') ?>">
                 <img class="img-responsive"
-                     src="assets/img/8796168978462.svg" alt="logo">
+                     src="<?= base_url('assets/img/logo/random-logo.png') ?>" alt="logo">
             </a>
         </div>
         <!-- Logo End -->
