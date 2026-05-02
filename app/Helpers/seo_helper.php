@@ -28,9 +28,9 @@ function getSeoBase(array $seo_data, array $settings)
 }
 
 function checkSeoData(array $seo_data, array $settings){
-    $seo_data['title'] = (!isset($seo_data['main_title']))
+    $seo_data['title'] = (!isset($seo_data['title']))
         ? getSettings($settings,'main_title')
-        : $seo_data['main_title'];
+        : $seo_data['title'];
     $seo_data['description'] = (!isset($seo_data['description']))
         ? getSettings($settings,'main_description')
         : $seo_data['description'];

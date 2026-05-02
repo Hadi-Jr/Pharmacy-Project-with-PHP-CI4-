@@ -9,7 +9,7 @@
                         <div class="row">
                             <div class="col-md-6  col-sm-6">
                                 <div class="seipkon-breadcromb-left">
-                                    <h3>Products</h3>
+                                    <h3><?= $category_name ?></h3>
                                 </div>
                             </div>
                             <div class="col-md-6  col-sm-6">
@@ -17,7 +17,7 @@
                                     <ul>
                                         <li><a href="<?= base_url('/') ?>">home</a></li>
                                         <li>categories</li>
-                                        <li>products</li>
+                                        <li><?= strtolower($category_name) ?></li>
                                     </ul>
                                 </div>
                             </div>
@@ -38,20 +38,24 @@
                             <div class="product-image">
                                 <img src="<?= base_url('assets/img/products/' . $product->image_url) ?>" alt="product"/>
                                 <div class="pro-image-overlay"></div>
-                                <div class="product-action">
-                                    <a href="edit-product.html" class="seipkon-btn seipkon-btn-primary">
-                                        <i class="fa fa-pencil"></i>
-                                        Edit
-                                    </a>
-                                    <a href="#" class="seipkon-btn seipkon-btn-danger">
-                                        <i class="fa fa-trash"></i>
-                                        Delete
-                                    </a>
-                                </div>
                             </div>
                             <div class="product-info">
                                 <h3><?= $product->{session()->get('locale') . '_name'}?></h3>
                                 <h4 class="price">$ <?= $product->price ?></h4>
+                            </div>
+
+                            <div class="action-buttons">
+                                <div class="seipkon-btn single-button-item" bis_skin_checked="1">
+                                    <button class="btn btn-success btn-rounded">
+                                        <i style="font-size: 15px;" class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                        Add To Cart</button>
+                                </div>
+
+                                <div class="seipkon-btn single-button-item" bis_skin_checked="1">
+                                    <button class="btn btn-info btn-rounded">
+                                        <i style="font-size: 15px;" class="fa fa-eye" aria-hidden="true"></i>
+                                        View Product</button>
+                                </div>
                             </div>
                         </div>
                         <!-- End Single Product -->

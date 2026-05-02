@@ -7,14 +7,18 @@ use CodeIgniter\Router\RouteCollection;
  */
 
 //Home
-$routes->get('home', 'Home::index');
-$routes->get('/', 'Home::index');
+$routes->add('/home', 'Home::index');
+$routes->add('/', 'Home::index');
 
 
 //Language
-$routes->post('language/switch', 'Language::switch');
+$routes->add('/language/switch', 'Language::switch');
 
 //Categories
-$routes->get('category/(:any)', 'Categories::view/$1');
+$routes->add('/category/(:any)', 'Categories::view/$1');
 
+//Registration
+$routes->add('/login', 'Registration::index');
+$routes->add('/register', 'Registration::registerNewUser');
+$routes->add('/logout', 'Registration::logout');
 

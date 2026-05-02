@@ -14,7 +14,7 @@
         <div class="seipkon-logo">
             <a href="<?= base_url('/') ?>">
                 <img class="img-responsive"
-                     src="<?= base_url('assets/img/logo/random-logo.png') ?>" alt="logo">
+                     src="<?= base_url('assets/img/logo/random-logo3.jpg') ?>" alt="logo">
             </a>
         </div>
         <!-- Logo End -->
@@ -50,9 +50,21 @@
                             <a style="cursor: pointer; font-size: 22px; margin-right: 10px;">
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </a>
-                            <a style="cursor: pointer; font-size: 22px;">
+                            <?php
+                            if (!$user_data) {
+                            ?>
+                            <a style="cursor: pointer; font-size: 22px;" href="<?= base_url('/login') ?>">
                                 <i class="fa-solid fa-user"></i>
                             </a>
+                            <?php
+                            } else {
+                            ?>
+                                <a style="cursor: pointer; font-size: 22px;" href="<?= base_url('/logout') ?>">
+                                    <i class="fa-solid fa-sign-out"></i>
+                                </a>
+                            <?php
+                            }
+                            ?>
 
                             <form class="lang-dropdown-form">
                                 <select name="language" class="lang-select">

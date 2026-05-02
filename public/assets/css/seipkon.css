@@ -404,8 +404,9 @@ table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before 
     height: auto;
     position: relative;
     text-align: center;
-    width: 120px;
+    width: 180px;
     z-index: 1;
+    margin-right: 25px;
 }
 
 .profile-rating ul,
@@ -916,7 +917,8 @@ a[aria-expanded="true"]:before {
 
 .breadcromb-area {
     background: #fff;
-    padding: 10px;
+    padding: 15px;
+    border-radius: 10px;
 }
 
 .seipkon-breadcromb-left>h3 {
@@ -2203,7 +2205,7 @@ ul.work_history>li>p {
 .label-success,
 .progress-bar-success,
 .seipkon-btn-success {
-    background-color: #ee8042;
+    background-color: #1cd0c7;
 }
 
 .btn-danger,
@@ -2459,6 +2461,7 @@ button.btn>i {
     margin-top: 30px;
     background: #fff;
     padding: 10px;
+    border-radius: 10px;
 }
 
 .product-image,
@@ -2467,23 +2470,26 @@ button.btn>i {
     position: relative;
 }
 
+.product-image {
+    border-radius: 10px;
+}
+
 .product-image img {
     -webkit-transition: 0.4s;
     transition: 0.4s;
     -webkit-transform: scale(1);
     transform: scale(1);
-    width: 100%;
 }
 
-.single-product:hover .product-image img {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-}
+/*.single-product:hover .product-image img {*/
+/*    -webkit-transform: scale(1.1);*/
+/*    transform: scale(1.1);*/
+/*}*/
 
 .product-info h3 {
     color: #333;
-    font-size: 19px;
-    font-weight: 500;
+    font-size: 12px;
+    font-weight: 1000;
     margin-bottom: 10px;
 }
 

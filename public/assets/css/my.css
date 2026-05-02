@@ -13,3 +13,19 @@
     gap: 12px;
     align-items: center;
 }
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.action-buttons button {
+    font-size: 15px;
+}
+
+.empty-category {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    font-size: 20px;
+}

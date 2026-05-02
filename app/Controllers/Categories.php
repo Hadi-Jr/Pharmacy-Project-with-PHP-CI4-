@@ -21,7 +21,9 @@ class Categories extends BaseController
 
     public function view($category_slug)
     {
-        $localeCatSuffix = session()->get('locale') . '_name';
+        $locale = session()->get('locale');
+        $localeCatSuffix = $locale . '_name';
+        $localeEmptyCatSuffix = $locale . '_empty';
 
         $category = $this->categoriesModel->get_category_by_slug($category_slug);
 
@@ -34,7 +36,8 @@ class Categories extends BaseController
         $products = $this->productsModel->get_category_products($category->id);
 
         $this->data += [
-            'products' => $products
+            'products' => $products,
+            'category_name' => $category->$localeCatSuffix
         ];
 
         if ($products) {
@@ -45,6 +48,7 @@ class Categories extends BaseController
         } else {
             echo view('templates/meta', $this->data);
             echo view('templates/header', $this->data);
+            echo view('category/empty_category', $this->data);
             echo view('templates/footer', $this->data);
         }
     }

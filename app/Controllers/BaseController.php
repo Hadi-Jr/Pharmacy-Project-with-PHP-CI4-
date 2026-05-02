@@ -33,11 +33,12 @@ class BaseController extends Controller
     {
         parent::initController($request, $response, $logger);
 
+        //Initialization
         $db = Database::connect();
         $this->session = Services::session();
-
         $this->categoriesModel = new CategoriesModel($db);
 
+        //Locale
         $locale = $this->session->get('locale');
         if ($locale) {
             $this->request->setLocale($locale);
@@ -45,6 +46,7 @@ class BaseController extends Controller
             $this->session->set('locale', config('app')->defaultLocale);
         }
 
+        //System Settings
         $this->settings = $db
             ->table('sys_settings')
             ->select('key, value')
@@ -52,14 +54,18 @@ class BaseController extends Controller
             ->get()
             ->getResultArray();
 
-        $categories = $this->categoriesModel
-            ->get_all_categories();
-
+        //Categories
+        $categories = $this->categoriesModel->get_all_categories();
         $categoryTree = $this->buildCategoryTree($categories);
 
+        //User Data
+        $user_data = $this->session->get('user_info');
+
+        //Building Base Data
         $this->data = [
             'settings' => $this->settings,
-            'categories' => $categoryTree
+            'categories' => $categoryTree,
+            'user_data' => $user_data
         ];
     }
 
